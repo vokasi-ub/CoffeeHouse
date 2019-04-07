@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{url('pelanggan')}}">
+                    <a href="{{url('pembelian')}}">
                         <i class="ti-shopping-cart-full"></i>
                         <p>Pembelian</p>
                     </a>

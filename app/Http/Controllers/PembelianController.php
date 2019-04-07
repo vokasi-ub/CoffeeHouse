@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+
+use App\PembelianModel;
 
 class PembelianController extends Controller
 {
@@ -13,7 +15,8 @@ class PembelianController extends Controller
      */
     public function index()
     {
-        //
+        $pembelian=DB::select("Select * From pembelian");
+        return view('pembelian.pembelian', compact('pembelian'));
     }
 
     /**

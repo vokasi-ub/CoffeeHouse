@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="content">
-<h2>Data Produk</h2>
+<h2>Data Pembelian</h2>
 <br>
 <div class="box box-info">
   <form action="" method="GET">
@@ -42,31 +42,21 @@
 <thead>
         <tr>
             <td>No</td>
-            <td>Kategori Produk</td>
-            <td>Nama Produk</td>
-            <td>Harga Produk</td>
-            <td>Berat Produk</td>
-            <td>Foto Produk</td>
-            <td>Deskripsi</td>
+            <td>Nama Pelanggan</td>
+            <td>Tanggal Transaksi</td>
+            <td>Total</td>
             <td>Aksi</td>
         </tr>
         </thead>
         <tbody>
-@foreach ($produk as $nomor => $produk)
+@foreach ($pembelian as $nomor => $pembelian)
         <tr>
             <td>{{ $nomor+1 }}</td>
-            <td>{{ $produk->kategori_produk }}</td>
-            <td>{{ $produk->nama_produk }}</td>
-            <td>Rp. {{ number_format($produk->harga_produk) }}</td>
-            <td>{{ $produk->berat_produk }} gr</td>
-            <td>{{ $produk->foto_produk }}</td>
-            <td>{{ $produk->deskripsi_produk }}</td>
+            <td>{{ $pembelian->id_pelanggan }}</td>
+            <td>{{ $pembelian->tanggal_pembelian }}</td>
+            <td>Rp. {{ number_format($pembelian->total_pembelian) }}</td>
             <td>
-                <a href="" class="btn btn-info">Edit</a>
-                <form action="{{ route('produk.destroy', $produk->id_produk)}}" method="post" style="float: right;">
-                  {{ csrf_field() }} @method('DELETE')
-                  <button onClick="return confirm('Yakin Menghapus ?')"type="submit" class="btn btn-danger">Hapus</button>
-                </form>
+                <a href="" class="btn btn-info">Detail</a>
             </td>    
         </tr> 
         @endforeach
