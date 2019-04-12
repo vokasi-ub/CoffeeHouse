@@ -1,0 +1,273 @@
+*
+{
+	box-sizing: border-box;
+}
+
+/* Pengaturan */
+[class*="kolom"]
+{
+	float: left;
+}
+
+body,html{
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    font-family: segoe ui;
+    border-top: 1px solid #bdc3c7;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+li {
+    float: right;
+    margin-right: 50px;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+/* Majalah Coffee */
+.majalah{
+    margin-bottom: 5px;
+    font-family: segoe ui;
+    font-size: 28px;
+    text-align: center;
+    height: 50px;
+    border-bottom: 1px solid black;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-family: segoe ui;
+
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.box{
+    width: 100%;
+    height: 400px;
+    border: 1px solid #bdc3c7; 
+}
+
+.footer{
+    width: 100%;
+    height: 90px;
+    border: 1px solid #bdc3c7; 
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Batas */
+.batas{
+    height: 50px;
+    background-color: #2d3436;
+    padding: 5px;
+    font-family: segoe ui;
+    font-size: 28px;
+    text-align: center;
+    color: white;
+}
+
+.box2{
+    width: 100%;
+    height: 300px;
+    border: 3px solid black;
+    border-style: dotted;
+    border-color: #bdc3c7;
+    padding: 3px;
+}
+.box3{
+    width: 100%;
+    height: 100%;
+    border: 3px solid black;
+    border-style: dotted;
+    border-color: #bdc3c7;
+}
+
+input[type=text] {
+    width: 50%;
+    height: 50px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #bdc3c7;
+    color: black;
+}
+
+.button2 {
+  display: inline-block;
+  background-color: #ccae62;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-family: segoe ui;
+  height: 50px
+
+}
+
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button2:hover span {
+  padding-right: 25px;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+th, td{
+    padding: 10px;
+}
+
+/* Kolom */
+.kolom1{width: 8.33%;}	
+.kolom2{width: 16.66%;}
+.kolom3{width: 25%;}
+.kolom4{width: 33.33%;}
+.kolom5{width: 41.66%}
+.kolom6{width: 50%;}
+.kolom7{width: 58.33%;}
+.kolom8{width: 66.66%;}
+.kolom9{width: 75%;}
+.kolom10{width: 83.33%;}
+.kolom11{width: 91.66%;}
+.kolom12{width: 100%;}
+.kolom13{width: 20%;}
+.kolom14{width: 4.165%;}
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 5px;
+    margin: 0px 0px;
+    cursor: pointer;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 20px;}
+.button5 {border-radius: 50%;}
+
+.kotak
+{
+    width: 320px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+

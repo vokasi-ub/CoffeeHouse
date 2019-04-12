@@ -11,8 +11,12 @@
         <label>Kategori</label>
       <select name="kategori_produk" class="form-control">
         @foreach ($kategori as $kategori)
-			<option value="{{ $kategori->id_kategori }}"> {{ $kategori->nama_kategori }}</option>
-		@endforeach
+				<?php if($kategori->id_kategori == $produk->kategori_produk){ ?>
+			<option selected="selected" value="{{ $kategori->id_kategori }}"> {{ $kategori->nama_kategori }}</option>
+				<?php } else { ?> 
+			<option value="{{ $kategori->id_kategori }}"> {{ $kategori->nama_kategori }}</option>	
+				<?php } ?>
+				@endforeach
 	  </select>
     </div>
 

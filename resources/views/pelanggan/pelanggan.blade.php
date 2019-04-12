@@ -28,15 +28,7 @@
     </button>
   </a>
     <br><br>-->
-              <!-- /.box-footer -->
-            </form>
-              </div>
-            
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
+          
 <table class="table table-bordered">
 
 <thead>

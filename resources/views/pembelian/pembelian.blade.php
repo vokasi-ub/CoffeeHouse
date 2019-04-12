@@ -22,27 +22,19 @@
   </form>
 
  <div class="box-body">
-  <a href="{{url('produk/create')}}">
+  <!--<a href="{{url('produk/create')}}">
     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-default">
       Tambah Data
     </button>
-  </a>
+  </a>-->
     <br><br>
-              <!-- /.box-footer -->
-            </form>
-              </div>
-            
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
+   
 <table class="table table-bordered">
 
 <thead>
         <tr>
             <td>No</td>
-            <td>Nama Pelanggan</td>
+            <td>ID Pelanggan</td>
             <td>Tanggal Transaksi</td>
             <td>Total</td>
             <td>Aksi</td>

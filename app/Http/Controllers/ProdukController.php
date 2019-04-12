@@ -16,8 +16,16 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        $produk=DB::select("Select * From produk");
+        $produk=ProdukModel::all();
         return view('produk.produk', compact('produk'));
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->get('cari');
+        $produk = ProdukModel::where('nama_produk', 'LIKE','%' . $query . '%')->paginate(10);
+
+        return view('produk.produk', compact('produk','query'));
     }
 
     /**
@@ -51,7 +59,7 @@ class ProdukController extends Controller
             }
          }
 
-        // insert data ke table kategori
+        // insert data ke table produk
         $produk = new ProdukModel([
             'kategori_produk' => $request->kategori_produk,
             'nama_produk' => $request->nama_produk,

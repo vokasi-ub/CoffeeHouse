@@ -26,4 +26,15 @@ Route::resource('kategori', 'KategoriController');
 Route::resource('produk', 'ProdukController');
 Route::resource('pembelian', 'PembelianController');
 Route::resource('pelanggan', 'PelangganController');
+Route::resource('tampilProduk', 'TampilProdukController');
+Route::resource('detailProduk', 'TampilProdukController');
+Route::resource('beli', 'TampilProdukController');
+Route::resource('nota', 'TampilProdukController');
 
+Route::get('transaksi/{id}', 'TampilProdukController@transaksi');
+Route::post('nota-beli', 'TampilProdukController@nota');
+
+
+
+//Searching
+Route::get('query', 'ProdukController@search');

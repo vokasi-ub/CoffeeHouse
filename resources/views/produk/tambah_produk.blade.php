@@ -9,6 +9,7 @@
     <div class="form-group">
         <label>Kategori</label>
       <select name="kategori_produk" class="form-control">
+			<option value="">- Pilih Kategori -</option>
         @foreach ($kategori as $kategori)
 			<option value="{{ $kategori->id_kategori }}"> {{ $kategori->nama_kategori }}</option>
 		@endforeach

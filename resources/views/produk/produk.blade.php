@@ -6,15 +6,15 @@
 <h2>Data Produk</h2>
 <br>
 <div class="box box-info">
-  <form action="" method="GET">
+  <form action="{{url('query')}}" method="GET">
     <div class="box-body">
       <div class="row">
         <div class="col-xs-5">
           <div class="input-group">
-            <input type="text" class="form-control" name="keyword" placeholder="Search">
-            <div class="input-group-btn">
-              <button type="submit" class="btn btn-info">Search</button>
-            </div>
+              <input type="text" class="form-control" name="cari" placeholder="Search">
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-info">Search</button>
+              </div>
           </div>
         </div>
       </div>
@@ -28,15 +28,7 @@
     </button>
   </a>
     <br><br>
-              <!-- /.box-footer -->
-            </form>
-              </div>
-            
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
+    
 <table class="table table-bordered">
 
 <thead>
@@ -55,7 +47,7 @@
 @foreach ($produk as $nomor => $produk)
         <tr>
             <td>{{ $nomor+1 }}</td>
-            <td>{{ $produk->kategori_produk }}</td>
+            <td>{{ $produk->kategori->nama_kategori }}</td>
             <td>{{ $produk->nama_produk }}</td>
             <td>Rp. {{ number_format($produk->harga_produk) }}</td>
             <td>{{ $produk->berat_produk }} gr</td>

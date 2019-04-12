@@ -27,16 +27,8 @@
       Tambah Data
     </button>
   </a>
-    <br><br>
-              <!-- /.box-footer -->
-            </form>
-              </div>
-            
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
+<br><br>
+
 <table class="table table-bordered">
 
 <thead>
@@ -64,7 +56,7 @@
         </tbody>
         </table>
         
-            </div>
+            
             <!-- /.box-body -->
           </div>
         </section>
