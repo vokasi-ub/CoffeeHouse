@@ -74,11 +74,11 @@
 	</div><br>
   <div class="form-group">
 		<label style="font-family: segoe ui"><b>Harga Produk</b></label><br>
-		<input type="text" readonly value="Rp. {{ $beli->harga_produk }}" class="form-control" name="harga">
+		<input type="text" readonly value="{{ $beli->harga_produk }}" class="form-control" name="harga">
 	</div><br>  
   <div class="form-group">
 		<label style="font-family: segoe ui"><b>Berat Produk</b></label><br>
-		<input type="text" readonly value="{{ $beli->berat_produk }} gr" class="form-control" name="berat">
+		<input type="text" readonly value="{{ $beli->berat_produk }}" class="form-control" name="berat">
 	</div><br>
   <div class="form-group">
 		<label style="font-family: segoe ui"><b>Jumlah Produk</b></label><br>
@@ -98,7 +98,7 @@
       <select method="post" style="width: 80%;" name="tarif">
         <option name="ongkir">Pilih Ongkos Kirim</option>
         @foreach ($ongkir as $ongkir)
-			<option value="{{ $ongkir->id_ongkir }}"> {{ $ongkir->nama_kota }} - Rp. {{ number_format($ongkir-> tarif) }}</option>
+			<option value="{{ $ongkir->tarif }}"> {{ $ongkir->nama_kota }} - Rp. {{ number_format($ongkir-> tarif) }}</option>
 		@endforeach
       </select>
     </div>
