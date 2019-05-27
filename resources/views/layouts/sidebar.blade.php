@@ -29,12 +29,12 @@
                         <p>Pembelian</p>
                     </a>
                 </li>
-                <li>
+                <!--<li>
                     <a href="{{url('pelanggan')}}">
                         <i class="ti-user"></i>
                         <p>Pelanggan</p>
                     </a>
-                </li>
+                </li>-->
                 <li>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();

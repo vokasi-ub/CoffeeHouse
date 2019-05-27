@@ -34,19 +34,19 @@
 <thead>
         <tr>
             <td>No</td>
-            <td>ID Pelanggan</td>
-            <td>Tanggal Transaksi</td>
-            <td>Total</td>
-            <td>Aksi</td>
+            <td>Nama Pelanggan</td>
+            <td>Nama Produk</td>
+            <td>Tarif Ongkir</td>
+            <td>Total Pembelian</td>
         </tr>
         </thead>
         <tbody>
 @foreach ($pembelian as $nomor => $pembelian)
         <tr>
             <td>{{ $nomor+1 }}</td>
-            <td>{{ $pembelian->id_pelanggan }}</td>
-            <td>{{ $pembelian->tanggal_pembelian }}</td>
-            <td>Rp. {{ number_format($pembelian->total_pembelian) }}</td>
+            <td>{{ $pembelian->nama_pembeli }}</td>
+            <td>{{ $pembelian->nama_produk }}</td>
+            <td>Rp. {{ number_format($pembelian->harga) }}</td>
             <td>
                 <a href="" class="btn btn-info">Detail</a>
             </td>    

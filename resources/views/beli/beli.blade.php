@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
   <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/assets/img/logo3.png') }}">
   <title>Coffee-House</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('assetsFront/css/style.css') }}">
@@ -65,7 +66,7 @@
 <div class="kolom10">
 <h1 style="font-family: segoe ui">Form Pembelian</h1>
 <hr>
-<form method="post" action="{{ route('beli.store')}}">
+<form method="post" action="{{ route('beli.store')}}" >
   @csrf
   <br>
   <div class="form-group">
@@ -74,7 +75,7 @@
 	</div><br>
   <div class="form-group">
 		<label style="font-family: segoe ui"><b>Harga Produk</b></label><br>
-		<input type="text" readonly value="{{ $beli->harga_produk }}" class="form-control" name="harga">
+		<input type="text" id="produk" readonly value="{{ $beli->harga_produk }}" class="form-control" name="harga">
 	</div><br>  
   <div class="form-group">
 		<label style="font-family: segoe ui"><b>Berat Produk</b></label><br>
@@ -87,25 +88,35 @@
   <div class="form-group">
   <label style="font-family: segoe ui"><b>Identitas Pembeli</b></label><br>
     <div class="kolom6">
-      <input type="text" style="width: 80%" name="nama_pelanggan" placeholder="Masukkan Nama">
+      <input type="text" style="width: 80%" name="nama_pembeli" placeholder="Masukkan Nama">
     </div>
     <div class="kolom6">
-      <input type="text" type="number" style="width: 80%" name="telepon_pelanggan" placeholder="Masukkan Nomor Telepon">
+    <input type="text" type="number" style="width: 80%" name="no_telepon" placeholder="Masukkan Nomor Telepon">
+    <input type="hidden" name="id_produk" value="{{$beli->id_produk}}">
     </div><br><br>
-    <br><br>    
+    <br><br>   
     <div class="form-group">
     <label style="font-family: segoe ui"><b>Ongkir</b></label><br>
-      <select method="post" style="width: 80%;" name="tarif">
-        <option name="ongkir">Pilih Ongkos Kirim</option>
+      <select style="width: 80%;" id="tarif" name="tarif">
+        <option name="id_ongkir">Pilih Ongkos Kirim</option>
         @foreach ($ongkir as $ongkir)
-			<option value="{{ $ongkir->tarif }}"> {{ $ongkir->nama_kota }} - Rp. {{ number_format($ongkir-> tarif) }}</option>
+			<option value="{{ $ongkir->id_ongkir }}"> {{ $ongkir->nama_kota }} - Rp. {{ number_format($ongkir-> tarif) }}</option>
 		@endforeach
       </select>
     </div>
+
+    <!--<select style="width: 80%;" id="harga" name="harga" ></select>-->
+
     <div class="kolom12"><br>
       <label style="font-family: segoe ui"><b>Alamat Pengiriman</b></label><br><br>
-      <textarea name="alamat_pengiriman" placeholder="Masukkan Alamat Lengkap Pengiriman"></textarea>
+      <textarea name="alamat_pengiriman" placeholder="Masukkan Alamat Lengkap Pengiriman" name="alamat_pengiriman"></textarea>
     </div>
+    
+    <!--<div class="kolom12"><br>
+      <label style="font-family: segoe ui"><b>Total Pembelian</b></label><br>
+      <input type="text" id="total" name="total_pembelian" readonly>
+    </div>-->
+    
 
   <div class="kolom12">
       <br><button onClick="return confirm('Kirim Pesanan Anda')" class="button" type="submit" style="vertical-align:middle; font-size: 16px;"><span>Checkout</span></button><br>
@@ -114,7 +125,42 @@
  </div>    
  </div>
 
- 
+ <!--<script type="text/javascript">
+    jQuery(document).ready(function ()
+    {
+            jQuery('select[name="tarif"]').on('change',function(){
+               var tarifID = jQuery(this).val();
+               if(tarifID)
+               {
+                  jQuery.ajax({
+                     url : '/getharga/' +tarifID,
+                     type : "GET",
+                     dataType : "json",
+                     success:function(data)
+                     {
+                        console.log(data);
+                        jQuery('select[name="harga"]').empty();
+                        jQuery.each(data, function(key,value){
+                           $('select[name="harga"]').append('<option value="'+ value +'">'+ value +'</option>');
+                        });
+                     }
+                  });
+               }
+               else
+               {
+                  $('select[name="harga"]').empty();
+               }
+            });
+    });
+</script>
+<script type="text/javascript">
+function cal(){
+        if(document.getElementById("tarif")){
+            document.getElementById("total").value= document.getElementById("produk").value + document.getElementById("produk").value;
+        }  
+    }
+
+    </script>-->
 
 <!-- Gambar -->
 <div class="kolom12"><br><br><br>

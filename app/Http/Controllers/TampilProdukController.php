@@ -43,12 +43,15 @@ class TampilProdukController extends Controller
         // insert data ke table pembelian
         $pembelian = new PembelianModel([
             'nama_produk' => $request->nama_produk,
+            'nama_pembeli' => $request->nama_pembeli,
+            'no_telepon' => $request->no_telepon,
             'harga' => $request->harga,
             'berat' => $request->berat,
             'jumlah' => $request->jumlah,
             'tarif' => $request->tarif,
             'alamat_pengiriman' => $request->alamat_pengiriman,
         ]);
+
         // alihkan halaman ke halaman kategori
         $pembelian->save();
         return redirect('/tampilProduk');
@@ -105,5 +108,11 @@ class TampilProdukController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getharga($id)
+    {
+        $tarif = DB::table('ongkir')->where("id_ongkir",$id)->pluck("tarif","id_ongkir");
+        return json_encode($tarif);
     }
 }

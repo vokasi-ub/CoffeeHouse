@@ -33,7 +33,7 @@ Route::resource('nota', 'TampilProdukController');
 
 Route::get('transaksi/{id}', 'TampilProdukController@transaksi');
 Route::post('nota-beli', 'TampilProdukController@nota');
-
+Route::get('/getharga/{id}', 'TampilPRodukController@getharga');
 
 
 //Searching

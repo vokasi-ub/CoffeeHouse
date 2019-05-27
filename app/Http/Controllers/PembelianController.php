@@ -18,6 +18,13 @@ class PembelianController extends Controller
         $pembelian=DB::select("Select * From pembelian");
         return view('pembelian.pembelian', compact('pembelian'));
     }
+    public function search(Request $request)
+    {
+        $query = $request->get('cari');
+        $pembelian = PembelianModel::where('nama_produk', 'LIKE','%' . $query . '%')->paginate(10);
+
+        return view('produk.produk', compact('produk','query'));
+    }
 
     /**
      * Show the form for creating a new resource.

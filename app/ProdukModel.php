@@ -7,7 +7,6 @@ use App\KategoriModel;
 use App\ProdukModel;
 use App\OngkirModel;
 use App\PembelianModel;
-use App\PelangganModel;
 
 
 class ProdukModel extends Model

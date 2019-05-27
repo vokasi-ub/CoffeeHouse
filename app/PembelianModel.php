@@ -13,6 +13,8 @@ class PembelianModel extends Model
     protected $primaryKey = 'id_pembelian';
     protected $fillable = [
         'nama_produk',
+        'nama_pembeli',
+        'no_telepon',
         'harga',
         'berat',
         'jumlah',
