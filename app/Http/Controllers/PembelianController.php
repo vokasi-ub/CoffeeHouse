@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 use App\PembelianModel;
+use App\OngkirModel;
 
 class PembelianController extends Controller
 {
@@ -15,7 +16,7 @@ class PembelianController extends Controller
      */
     public function index()
     {
-        $pembelian=DB::select("Select * From pembelian");
+        $pembelian=PembelianModel::all();
         return view('pembelian.pembelian', compact('pembelian'));
     }
     public function search(Request $request)

@@ -22,9 +22,9 @@ class PembelianModel extends Model
         'alamat_pengiriman'
 ];
 
-public function nama()
+public function ongkir()
 {
-    return $this->belongsTo(PelangganModel::class, 'id_pelanggan', 'id_pelanggan');
+    return $this->belongsTo(OngkirModel::class, 'tarif', 'id_ongkir');
 }    
 
 }

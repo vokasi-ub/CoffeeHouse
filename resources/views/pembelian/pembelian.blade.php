@@ -46,9 +46,9 @@
             <td>{{ $nomor+1 }}</td>
             <td>{{ $pembelian->nama_pembeli }}</td>
             <td>{{ $pembelian->nama_produk }}</td>
-            <td>Rp. {{ number_format($pembelian->harga) }}</td>
+            <td>Rp. {{ number_format($pembelian->ongkir->tarif) }}</td>
             <td>
-                <a href="" class="btn btn-info">Detail</a>
+            Rp. {{ number_format($pembelian->harga) }}
             </td>    
         </tr> 
         @endforeach
